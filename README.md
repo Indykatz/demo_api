@@ -7,6 +7,7 @@
 `.gitignore'
 
 `npm init -y`
+`npm i react-script --save`
 `npm i dotenv`
 `npm i express`
 `npm i mongoose`
