@@ -70,26 +70,4 @@ exports.getUsers = async (req, res) => {
   }
 };
 
-// Find all - dev mode
 
-// R - Read
-// FindAll Users - request, response
-exports.findAll = async (req, res) => {
-  // This this - because im a sensible developer
-  try {
-    // find User object in body
-    const users = await User.find(req.body);
-    // If User is in db
-    if (!users) {
-      // Throw this at ya
-      throw new Error("User not found");
-      //  else send the user responce
-    } else {
-      res.send({ users });
-    }
-    // sensible developer
-  } catch (error) {
-    console.log(error);
-    res.send({ error });
-  }
-};
