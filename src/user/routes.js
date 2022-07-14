@@ -4,7 +4,7 @@ const {
   login,
   updateUser,
   deleteUser,
-  findAll,
+  getUsers,
 } = require("./controllers"); //import only signUp from controllers file
 const { hashPass, comparePass, tokenCheck } = require("../middleware");
 const userRouter = Router(); //create a router that can have endpoints added to it
@@ -14,5 +14,5 @@ userRouter.post("/login", comparePass, login); //defining a post request on /log
 userRouter.get("/user", tokenCheck, login); //defining a post request on /token path, that calls both token and login
 userRouter.patch("/user", hashPass, updateUser);
 userRouter.delete("/user", tokenCheck, deleteUser);
-userRouter.get("/users", findAll); // defining a get request on /user path
+userRouter.get("/users", getUsers); // defining a get request on /user path
 module.exports = userRouter;
