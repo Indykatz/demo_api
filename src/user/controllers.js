@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const User = require("./model");
+
 
 exports.signUp = async (req, res) => {
   try {
@@ -60,3 +60,12 @@ exports.deleteUser = async (req, res) => {
     res.send({ error });
   }
 };
+
+exports.getUsers = async (req,res) => {
+  try{
+    const users = await User.find(req.body);
+    res.send({ user: users });
+  }catch(error){
+    console.log(error)
+  }
+}
