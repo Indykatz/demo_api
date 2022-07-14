@@ -1,0 +1,27 @@
+{
+  "name": "fp_demo_api",
+  "version": "1.0.0",
+  "description": "`mkdir src src/db src/middleware src/user` `touch src/server.js src/db/connection.js src/middleware/index.js src/user/controllers.js src/user/model.js src/user/routes.js`",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Indykatz/demo_api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Indykatz/demo_api/issues"
+  },
+  "homepage": "https://github.com/Indykatz/demo_api#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.4.4"
+  }
+}
