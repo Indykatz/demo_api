@@ -5,6 +5,7 @@ const {
   updateUser,
   deleteUser,
   getUsers,
+  removeUser,
 } = require("./controllers"); //import only signUp from controllers file
 const { hashPass, comparePass, tokenCheck } = require("../middleware");
 const userRouter = Router(); //create a router that can have endpoints added to it
@@ -15,4 +16,7 @@ userRouter.get("/user", tokenCheck, login); //defining a post request on /token 
 userRouter.patch("/user", hashPass, updateUser);
 userRouter.delete("/user", tokenCheck, deleteUser);
 userRouter.get("/users", getUsers); // defining a get request on /user path
+
+userRouter.delete("/users/:username", removeUser); // defining a delete request on /user path
+
 module.exports = userRouter;
