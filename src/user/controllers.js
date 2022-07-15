@@ -61,6 +61,8 @@ exports.deleteUser = async (req, res) => {
   }
 };
 
+// Dev
+
 exports.getUsers = async (req, res) => {
   try {
     const users = await User.find(req.body);
@@ -70,4 +72,13 @@ exports.getUsers = async (req, res) => {
   }
 };
 
-
+// D - Delete a User, request, response
+exports.removeUser = async (req, res) => {
+  try {
+    const removeUser = await User.deleteOne({ username: req.params.username });
+    res.send({ user: removeUser });
+  } catch (error) {
+    console.log(error);
+    res.send({ error });
+  }
+};
